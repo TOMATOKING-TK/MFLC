@@ -1,4 +1,4 @@
-# merc-fleet level calculator
+# merc fleet level calculator
 this is a project i started for my level grinding so i can see how much XP i need for my level goal
 if there's an error in the calculation or code feel free to open a pull request or DM me on discord
 
