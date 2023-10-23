@@ -4,6 +4,7 @@ if there's an error in the calculation or code feel free to open a pull request 
 
 any help is appreciated
 
+i recommand you run the python script itself instead of the exe version but some people do not wanna go through that process so i've made an exe version that you can download [here](https://github.com/TOMATOKING-TK/MFLC/releases/tag/releases)
 
 ![Screenshot 2023-10-19 225505](https://github.com/TOMATOKING-TK/MFLC/assets/80415934/e0d16302-ee15-4faf-be5a-15a2f0d17f6f)
 
