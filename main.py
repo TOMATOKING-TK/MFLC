@@ -8,11 +8,13 @@ kill_XP = 50
 options = """
 [1] how much more xp is needed for your next level goal
 [2] how much xp is needed to go to that level from 0
+[3] from xp to level
 """
 
 chose_list = [
     1,
-    2
+    2,
+    3
 ]
 
 def clear():
@@ -23,6 +25,17 @@ def get_start_level_XP(start_level):
     for I in range(start_level):
         start_level_XP_cal = add_per_level * I; start_level_XP_cal += first_level; start_level_XP += start_level_XP_cal
     return start_level_XP
+
+def XP_to_level(XP):
+    count = 0
+    while True:
+        level_XP = get_start_level_XP(count)
+        if level_XP == XP or level_XP > XP:
+            break
+        count += 1
+    if get_start_level_XP(count) > XP:
+        count -= 1
+    return count
 
 def calculator_from(start_level, go_level):
     clear()
@@ -45,6 +58,13 @@ def calculator_to(start_level):
     print("level: " + str(start_level))
     print(f"XP needed for {start_level} to {start_level + 1}: {level_UP}")
     print("XP needed: " + str(XP_amount))
+    input("press enter to go back")
+
+def calculator_XP(XP):
+    clear()
+    XP_level = XP_to_level(XP)
+    print("XP amount: " + str(XP))
+    print("level from XP: " + str(XP_level))
     input("press enter to go back")
 
 def main():
@@ -71,6 +91,13 @@ def main():
             except:
                 return
             calculator_to(start_level)
+        elif chose == 3:
+            XP_level = input("XP amount: ")
+            try:
+                XP_level = int(XP_level)
+            except:
+                return
+            calculator_XP(XP_level)
     else:
         print(f"\n{chose} is not an option")
         input("press enter to go back")
