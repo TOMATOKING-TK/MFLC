@@ -63,8 +63,14 @@ def calculator_to(start_level):
 def calculator_XP(XP):
     clear()
     XP_level = XP_to_level(XP)
+    level_XP = get_start_level_XP(XP_level); next_level_XP = get_start_level_XP(XP_level + 1); needed_XP = next_level_XP - level_XP
+    progress_XP = XP - level_XP
+    progress = progress_XP / needed_XP * 100
     print("XP amount: " + str(XP))
     print("level from XP: " + str(XP_level))
+    print("XP requirement to next level: " + str(needed_XP))
+    print("XP amount to next level: " + str(progress_XP))
+    print(f"progress to next level: {round(progress, 2)}%")
     input("press enter to go back")
 
 def main():
