@@ -81,29 +81,30 @@ def main():
     except:
         return
     if chose in chose_list:
-        if chose == 1:
-            start_level = input("what is your starting level: ")
-            go_level = input("what is your level goal: ")
-            try:
-                start_level = int(start_level)
-                go_level = int(go_level)
-            except:
-                return
-            calculator_from(start_level, go_level)
-        elif chose == 2:
-            start_level = input("level: ")
-            try:
-                start_level = int(start_level)
-            except:
-                return
-            calculator_to(start_level)
-        elif chose == 3:
-            XP_level = input("XP amount: ")
-            try:
-                XP_level = int(XP_level)
-            except:
-                return
-            calculator_XP(XP_level)
+        match chose:
+            case 1:
+                start_level = input("what is your starting level: ")
+                go_level = input("what is your level goal: ")
+                try:
+                    start_level = int(start_level)
+                    go_level = int(go_level)
+                except:
+                    return
+                calculator_from(start_level, go_level)
+            case 2:
+                start_level = input("level: ")
+                try:
+                    start_level = int(start_level)
+                except:
+                    return
+                calculator_to(start_level)
+            case 3:
+                XP_level = input("XP amount: ")
+                try:
+                    XP_level = int(XP_level)
+                except:
+                    return
+                calculator_XP(XP_level)
     else:
         print(f"\n{chose} is not an option")
         input("press enter to go back")
