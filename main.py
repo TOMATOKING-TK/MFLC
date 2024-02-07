@@ -1,5 +1,5 @@
-import os
-import math
+from os import system
+from math import ceil
 
 add_per_level = 160
 first_level = 200
@@ -18,7 +18,7 @@ chose_list = [
 ]
 
 def clear():
-    os.system('cls')
+    system('cls')
 
 def get_start_level_XP(start_level):
     start_level_XP = 0
@@ -42,7 +42,7 @@ def calculator_from(start_level, go_level):
     level_needed = go_level - start_level
     start_level_XP = get_start_level_XP(start_level); XP_amount = get_start_level_XP(go_level)
     XP_amount = XP_amount - start_level_XP
-    kills_needed = XP_amount / kill_XP; kills_needed = math.ceil(kills_needed)
+    kills_needed = XP_amount / kill_XP; kills_needed = ceil(kills_needed)
     print("these are the stats for your wanted level:")
     print("current level: " + str(start_level))
     print("wanted level: " + str(go_level))
